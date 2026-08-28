@@ -37,14 +37,14 @@ img{max-width:100%}
 .lang button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
 
 /* ---------- hero: compact, text left / photo right ---------- */
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);
-      align-items:center;padding:clamp(1.5rem,3.5vw,2.5rem) 0}
-.eyebrow{font:500 .6875rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin:0 0 .9rem}
-.hero h1{font-size:clamp(1.6rem,3.1vw,2.4rem);letter-spacing:-.025em}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(1.25rem,3vw,2.25rem);
+      align-items:center;padding:clamp(1rem,2.5vw,1.6rem) 0}
+.eyebrow{font:500 .625rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin:0 0 .7rem}
+.hero h1{font-size:clamp(1.4rem,2.6vw,1.95rem);letter-spacing:-.025em}
 .hero h1 em{font-style:normal;font-weight:600}
-.lede{max-width:44ch;margin:.9rem 0 0;color:var(--soft);font-size:.9375rem;line-height:1.55}
+.lede{max-width:46ch;margin:.7rem 0 0;color:var(--soft);font-size:.875rem;line-height:1.5}
 .shot{margin:0;line-height:0}
-.shot img{width:100%;height:clamp(9rem,26vh,15rem);object-fit:cover;object-position:50% 55%;border-radius:6px;display:block}
+.shot img{width:100%;height:clamp(7.5rem,19vh,11rem);object-fit:cover;object-position:50% 55%;border-radius:5px;display:block}
 .shot figcaption{font:500 .625rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-top:.6rem}
 
 /* ---------- tabs ---------- */
@@ -84,18 +84,15 @@ section:first-child{border-top:0}
 .rule p{margin:0}
 .rule.hide{display:none}
 
-/* ---------- contacts: compact strip ---------- */
-#contacts{padding:1.25rem 0 1.5rem;border-top:1px solid var(--line)}
-.clabel{font:500 .6875rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin:0 0 .75rem}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.card{background:#fff;padding:.85rem 1rem;display:flex;flex-direction:column;gap:.1rem}
-.card h3{font-size:.875rem;font-weight:600;letter-spacing:0}
-.role{margin:0;color:var(--soft);font-size:.75rem;line-height:1.4}
-.tel{font-family:var(--disp);font-size:1.375rem;letter-spacing:-.025em;text-decoration:none;
-     color:var(--ink);display:block;margin-top:.3rem;transition:color .15s}
+/* ---------- contacts: one inline strip ---------- */
+#contacts{padding:0 0 1rem;border-top:1px solid var(--line);padding-top:.9rem}
+.cards{display:flex;flex-wrap:wrap;gap:.35rem 2.25rem;align-items:baseline}
+.card{display:flex;align-items:baseline;gap:.6rem}
+.card h3{font:500 .6875rem/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--soft)}
+.tel{font-family:var(--disp);font-size:1.125rem;font-weight:500;letter-spacing:-.02em;
+     text-decoration:none;color:var(--ink);transition:color .15s}
 .tel:hover{color:var(--green)}
-.mail{font-size:.75rem;margin:.15rem 0 0;word-break:break-word}
-.meta{margin:.3rem 0 0;font:500 .75rem/1.5 var(--mono);color:var(--soft)}
+.orgname{font-size:.8125rem;color:var(--soft)}
 
 /* ---------- full code: sticky chapter nav + text ---------- */
 .codegrid{display:grid;grid-template-columns:15rem minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
@@ -184,32 +181,16 @@ body[data-lang="lv"] [data-l="en"],body[data-lang="en"] [data-l="lv"]{display:no
   </div>
 
     <section id="contacts"><div class="wrap">
-    <p class="clabel" data-lvtext="Kontakti" data-entext="Contacts">Kontakti</p>
     <div class="cards">
+      <div class="card"><h3>Oskars</h3><a class="tel" href="tel:+37124249979">2424 9979</a></div>
+      <div class="card"><h3>Civinity</h3><a class="tel" href="tel:80001599">8000 1599</a></div>
       <div class="card">
-        <h3>Oskars</h3>
-        <p class="role" data-l="lv">Civinity · kvartāla pārstāvis</p>
-        <p class="role" data-l="en">Civinity · quarter representative</p>
-        <a class="tel" href="tel:+37124249979">2424 9979</a>
-      </div>
-      <div class="card">
-        <h3>Civinity</h3>
-        <p class="role" data-l="lv">Klientu serviss · diennakts</p>
-        <p class="role" data-l="en">Customer service · 24/7</p>
-        <a class="tel" href="tel:80001599">8000 1599</a>
-        <p class="mail"><a href="mailto:klientuserviss@civinity.lv">klientuserviss@civinity.lv</a></p>
-      </div>
-      <div class="card">
-        <h3 data-l="lv">Avārija</h3><h3 data-l="en">Emergency</h3>
-        <p class="role" data-l="lv">Tad ziņo Civinity (7.1.4.)</p>
-        <p class="role" data-l="en">Then notify Civinity (7.1.4.)</p>
+        <h3 data-lvtext="Avārija" data-entext="Emergency">Avārija</h3>
         <a class="tel" href="tel:112">112</a>
       </div>
       <div class="card">
-        <h3 data-l="lv">Pārvaldnieks</h3><h3 data-l="en">Manager</h3>
-        <p class="role" data-l="lv">Biedrība „Antonijas 17A”</p>
-        <p class="role" data-l="en">Association “Antonijas 17A”</p>
-        <p class="meta">Reģ. 40008274461</p>
+        <h3 data-lvtext="Pārvaldnieks" data-entext="Manager">Pārvaldnieks</h3>
+        <span class="orgname">Biedrība „Antonijas 17A” · reģ. 40008274461</span>
       </div>
     </div>
   </div></section>
@@ -240,8 +221,6 @@ body[data-lang="lv"] [data-l="en"],body[data-lang="en"] [data-l="lv"]{display:no
     <section id="waste"><div class="wrap">
       <div class="shead">
         <h2 data-l="lv">Atkritumi</h2><h2 data-l="en">Waste</h2>
-        <p data-l="lv">Kvartālā nav bioloģisko atkritumu konteinera.</p>
-        <p data-l="en">There is no organic waste container in the quarter.</p>
       </div>
       <div class="rules" id="r-waste"></div>
     </div></section>
@@ -292,8 +271,11 @@ body[data-lang="lv"] [data-l="en"],body[data-lang="en"] [data-l="lv"]{display:no
    Ieraksti nāk no Google izklājlapas. Lai to pieslēgtu, ielīmē
    izklājlapas ID starp pēdiņām zemāk. Vairāk nekas nav jāmaina.
    ================================================================= */
-const SHEET_ID = '1IrF0px2hSBSHq2Whn6nYjgRptsLSGXVP_8ytjfQ6GUs';
+const SHEET_ID  = '1IrF0px2hSBSHq2Whn6nYjgRptsLSGXVP_8ytjfQ6GUs';
 const SHEET_TAB = 'Aktualitates';
+/* Ielīmē šeit publicēto CSV saiti (Fails → Kopīgot → Publicēt tīmeklī → CSV).
+   Ja tukšs, tiek mēģināta parastā saite. */
+const SHEET_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSBxy7zdVFk5s72zdt3TmDmZrwr0yaYX0eHn3jDES193fB19yfLIFOiOe0ebiT4ujshZAjh3le1HmPR/pub?gid=0&single=true&output=csv';
 
 const newsBox = document.getElementById('news');
 const say = (lv,en) => `<p class="empty"><span data-l="lv">${lv}</span><span data-l="en">${en}</span></p>`;
@@ -331,29 +313,38 @@ function renderNews(items){
 }
 
 async function loadNews(){
-  if(!SHEET_ID){ renderNews([]); return; }
-  newsBox.innerHTML = say('Ielādē…','Loading…');
-  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_TAB)}`;
-  try{
-    const res = await fetch(url);
-    if(!res.ok) throw new Error(res.status);
-    const rows = parseCSV(await res.text()).slice(1);      // drop the header row
-    const items = rows
-      .map(r => ({date:(r[0]||'').trim(), tLv:(r[1]||'').trim(), bLv:(r[2]||'').trim(),
-                  tEn:(r[3]||'').trim(), bEn:(r[4]||'').trim(), show:(r[5]||'').trim().toLowerCase()}))
-      .filter(n => n.tLv && n.show !== 'nē' && n.show !== 'ne' && n.show !== 'no')
-      .sort((a,b) => (b.date || '').localeCompare(a.date || ''));
-    renderNews(items);
-  }catch(e){
-    newsBox.innerHTML = say('Aktualitātes neizdevās ielādēt. Mēģini vēlāk.','Updates could not be loaded. Please try again later.');
+  if(location.protocol === 'file:'){
+    newsBox.innerHTML = say('Aktualitātes ielādējas tikai publicētajā lapā, nevis atverot failu no datora.',
+                            'Updates load only on the published page, not when opening the file from your computer.');
+    return;
   }
+  if(!SHEET_ID && !SHEET_CSV){ renderNews([]); return; }
+  newsBox.innerHTML = say('Ielādē…','Loading…');
+  const urls = SHEET_CSV ? [SHEET_CSV]
+    : [`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_TAB)}`,
+       `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`];
+  for(const url of urls){
+    try{
+      const res = await fetch(url);
+      if(!res.ok) continue;
+      const rows = parseCSV(await res.text()).slice(1);      // drop the header row
+      const items = rows
+        .map(r => ({date:(r[0]||'').trim(), tLv:(r[1]||'').trim(), bLv:(r[2]||'').trim(),
+                    tEn:(r[3]||'').trim(), bEn:(r[4]||'').trim(), show:(r[5]||'').trim().toLowerCase()}))
+        .filter(n => n.tLv && !['nē','ne','no','0'].includes(n.show))
+        .sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+      renderNews(items);
+      return;
+    }catch(e){ /* try the next address */ }
+  }
+  newsBox.innerHTML = say('Aktualitātes neizdevās ielādēt. Pārbaudi, vai izklājlapa ir publicēta tīmeklī.',
+                          'Updates could not be loaded. Check that the spreadsheet is published to the web.');
 }
 loadNews();
 
 const RULES={
  waste:[
   ['7.1.3.','Šķiro atkritumus atbilstoši konteineru marķējumam.','Sort waste according to the container labels.'],
-  ['7.1.3.','Bioloģisko atkritumu konteinera kvartālā nav — pārtikas atliekas mest nešķirotajos sadzīves atkritumos.','There is no organic waste container — food waste goes in general waste.'],
   ['7.1.3.','Lielgabarīta atkritumu izvešana iepriekš jāpiesaka Civinity: sadzīves tehnika, mēbeles, Ziemassvētku eglītes un līdzīgas lietas. Neatstāt tās pie konteineriem.','Bulky waste must be booked with Civinity in advance: appliances, furniture, Christmas trees and similar. Do not leave it beside the containers.'],
   ['7.1.3.','Neuzglabāt atkritumus, arī maisos, koplietošanas telpās.','Do not store waste, including bagged waste, in common areas.'],
   ['7.1.3.','Nekavējoties savākt sava dzīvnieka ekskrementus.','Clean up after your pet immediately.']
