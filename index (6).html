@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antonijas 17A — Kvartāla kodekss</title>
+<meta name="description" content="Antonijas ielas 17A iedzīvotāju lapa: Kodeksa noteikumi, atkritumi, kontakti.">
+<meta name="theme-color" content="#FBFBF9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFBF9; --panel:#F2F2EE; --ink:#16181A; --soft:#5D6369;
+  --green:#2F5D46; --clay:#93433A; --line:#E3E3DD;
+  --disp:"Instrument Sans",system-ui,sans-serif; --body:"Figtree",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:8.5rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:76rem;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.12;letter-spacing:-.02em;margin:0}
+a{color:var(--green)}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
+img{max-width:100%}
+
+/* ---------- top bar ---------- */
+.bar{position:sticky;top:0;z-index:30;background:rgba(251,251,249,.9);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:.9rem;min-height:3.5rem;flex-wrap:wrap}
+.wm{margin-right:auto;text-decoration:none;color:inherit;font-family:var(--disp);font-weight:500;font-size:1.0625rem;letter-spacing:-.01em}
+.wm small{display:block;font:500 .625rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-top:.28rem}
+#q{font:400 .9rem var(--body);padding:.45rem .85rem;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink);width:13rem;transition:border-color .15s}
+#q:hover,#q:focus{border-color:var(--green)}
+#q::placeholder{color:#9AA0A4}
+.lang{display:flex;gap:2px;background:var(--panel);border-radius:100px;padding:3px}
+.lang button{font:500 .75rem/1 var(--disp);letter-spacing:.04em;padding:.4rem .7rem;border:0;border-radius:100px;background:transparent;color:var(--soft);cursor:pointer;transition:.15s}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+
+/* ---------- hero: compact, text left / photo right ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);
+      align-items:center;padding:clamp(1.5rem,3.5vw,2.5rem) 0}
+.eyebrow{font:500 .6875rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin:0 0 .9rem}
+.hero h1{font-size:clamp(1.6rem,3.1vw,2.4rem);letter-spacing:-.025em}
+.hero h1 em{font-style:normal;font-weight:600}
+.lede{max-width:44ch;margin:.9rem 0 0;color:var(--soft);font-size:.9375rem;line-height:1.55}
+.shot{margin:0;line-height:0}
+.shot img{width:100%;height:clamp(9rem,26vh,15rem);object-fit:cover;object-position:50% 55%;border-radius:6px;display:block}
+.shot figcaption{font:500 .625rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-top:.6rem}
+
+/* ---------- tabs ---------- */
+.tabbar{position:sticky;top:3.5rem;z-index:20;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabbar .wrap{display:flex;gap:.35rem}
+.tabbar button{font:500 .9375rem/1 var(--disp);letter-spacing:-.01em;padding:1rem .25rem;margin-right:1.5rem;
+  border:0;background:none;color:var(--soft);cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+.tabbar button:hover{color:var(--ink)}
+.tabbar button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--green)}
+[role=tabpanel][hidden]{display:none}
+
+/* ---------- sections ---------- */
+section{padding:clamp(2.25rem,5vw,3.5rem) 0;border-top:1px solid var(--line)}
+section:first-child{border-top:0}
+.shead{margin-bottom:clamp(1.25rem,3vw,2rem);max-width:52rem}
+.shead h2{font-size:clamp(1.5rem,3.2vw,2.1rem);letter-spacing:-.025em}
+.shead p{margin:.7rem 0 0;color:var(--soft);max-width:46ch;font-size:.9375rem}
+.grp{font:500 .6875rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);
+     margin:2.25rem 0 .35rem;padding-bottom:.7rem;border-bottom:1px solid var(--line)}
+.grp:first-child{margin-top:0}
+
+/* ---------- aktualitātes ---------- */
+.post{padding:1.4rem 0;border-bottom:1px solid var(--line);max-width:46rem}
+.post:first-child{padding-top:0}
+.post time{display:block;font:500 .6875rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.6rem}
+.post h3{font-size:1.1875rem;font-weight:500;margin-bottom:.5rem}
+.post p{margin:0;color:var(--soft);font-size:.9375rem}
+.empty{color:var(--soft);font-size:.9375rem;margin:0;padding:1.5rem 0}
+
+/* ---------- clause spine ---------- */
+.rule{display:grid;grid-template-columns:5.5rem 1fr;gap:1.5rem;padding:.9rem .75rem .9rem 1rem;
+      margin-left:-1rem;border-bottom:1px solid var(--line);border-left:2px solid transparent;transition:background .15s,border-color .15s}
+.rule:hover{background:#fff;border-left-color:var(--green)}
+#ban .rule:hover{border-left-color:var(--clay)}
+.ref{font:500 .8125rem/1.7 var(--mono);color:var(--green)}
+#ban .ref{color:var(--clay)}
+.rule p{margin:0}
+.rule.hide{display:none}
+
+/* ---------- contacts: compact strip ---------- */
+#contacts{padding:1.25rem 0 1.5rem;border-top:1px solid var(--line)}
+.clabel{font:500 .6875rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin:0 0 .75rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.card{background:#fff;padding:.85rem 1rem;display:flex;flex-direction:column;gap:.1rem}
+.card h3{font-size:.875rem;font-weight:600;letter-spacing:0}
+.role{margin:0;color:var(--soft);font-size:.75rem;line-height:1.4}
+.tel{font-family:var(--disp);font-size:1.375rem;letter-spacing:-.025em;text-decoration:none;
+     color:var(--ink);display:block;margin-top:.3rem;transition:color .15s}
+.tel:hover{color:var(--green)}
+.mail{font-size:.75rem;margin:.15rem 0 0;word-break:break-word}
+.meta{margin:.3rem 0 0;font:500 .75rem/1.5 var(--mono);color:var(--soft)}
+
+/* ---------- full code: sticky chapter nav + text ---------- */
+.codegrid{display:grid;grid-template-columns:15rem minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.toc{position:sticky;top:8.5rem;max-height:calc(100vh - 10rem);overflow:auto}
+.toc-t{font:500 .6875rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin:0 0 .9rem}
+.toc a{display:grid;grid-template-columns:1.6rem 1fr;gap:.5rem;padding:.5rem .6rem;margin-left:-.6rem;
+       text-decoration:none;color:var(--soft);font-size:.875rem;line-height:1.35;border-radius:4px;
+       border-left:2px solid transparent;transition:.15s}
+.toc a:hover{background:var(--panel);color:var(--ink)}
+.toc a.on{color:var(--ink);border-left-color:var(--green);background:var(--panel)}
+.nn{font:500 .75rem/1.45 var(--mono);color:var(--green)}
+.ch{padding:0 0 2.25rem}
+.ch h3{display:flex;gap:1rem;align-items:baseline;padding:1.25rem 0 .9rem;border-bottom:1px solid var(--line);margin-bottom:.6rem}
+.chn{font:500 .8125rem/1.8 var(--mono);color:var(--green);min-width:1.75rem}
+.cht{font-size:1.1875rem;font-weight:500;flex:1}
+.draft{font:500 .5625rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--clay);
+       border:1px solid currentColor;border-radius:100px;padding:.35rem .55rem}
+.cl{display:grid;grid-template-columns:4.5rem 1fr;gap:1.25rem;padding:.45rem 0}
+.cl.d2{padding-left:1.75rem}
+.cl.hide{display:none}
+.cn{font:500 .78125rem/1.75 var(--mono);color:var(--soft)}
+.cl p{margin:0;font-size:.9375rem;color:#2C3033}
+.note{background:var(--panel);border-left:2px solid var(--clay);border-radius:0 4px 4px 0;padding:1rem 1.25rem;margin:0 0 1.5rem;font-size:.9375rem;color:var(--soft)}
+.note b{color:var(--ink);font-weight:600}
+
+footer{border-top:1px solid var(--line);padding:2.25rem 0 3.5rem;color:var(--soft);font-size:.875rem}
+footer p{margin:.4rem 0;max-width:62ch}
+
+body[data-lang="lv"] [data-l="en"],body[data-lang="en"] [data-l="lv"]{display:none}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:1.5rem}
+  .codegrid{grid-template-columns:1fr}
+  .toc{position:static;max-height:none;display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.75rem;
+       border-bottom:1px solid var(--line);margin-bottom:1.5rem}
+  .toc-t{display:none}
+  .toc a{flex:none;grid-template-columns:auto;margin:0;border:1px solid var(--line);border-radius:100px;
+         padding:.4rem .8rem;white-space:nowrap;font-size:.8125rem}
+  .toc a .nn{display:none}
+  .toc a.on{border-color:var(--green)}
+}
+@media(max-width:640px){
+  .rule,.cl{grid-template-columns:1fr;gap:.3rem}
+  .cl.d2{padding-left:1rem;border-left:1px solid var(--line)}
+  #q{width:100%;order:3}
+  .tabbar{top:auto;position:static}
+  html{scroll-padding-top:1rem}
+}
+@media print{
+  .bar,.note,.shot,.toc,.tabbar{display:none}
+  body{background:#fff;font-size:10pt}
+  .codegrid{display:block}
+  [role=tabpanel][hidden]{display:block!important}
+  section{padding:1rem 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body data-lang="lv">
+
+<header class="bar">
+  <div class="wrap">
+    <a class="wm" href="#top">Antonijas 17A<small data-lvtext="Kvartāla kodekss" data-entext="The Quarter Code">Kvartāla kodekss</small></a>
+    <input id="q" type="search" placeholder="Meklēt noteikumos…" aria-label="Meklēt noteikumos">
+    <div class="lang" role="group" aria-label="Valoda">
+      <button data-set="lv" aria-pressed="true">LV</button>
+      <button data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Antonijas iela 17A · Rīga</p>
+        <h1 data-l="lv">Kārtība, par kuru esam <em>vienojušies</em></h1>
+        <h1 data-l="en">The order we have <em>agreed on</em></h1>
+        <p class="lede" data-l="lv">Kodeksa noteikumi, atkritumu kārtība un kontakti. Katram noteikumam blakus ir punkta numurs, lai to var atrast pilnajā tekstā.</p>
+        <p class="lede" data-l="en">The rules of the Code, how waste works here, and who to call. Each rule carries its clause number so you can find it in the full text.</p>
+      </div>
+      <figure class="shot">
+        <img src="hero.jpg" alt="Kvartāla iekšpagalms ar rotaļu laukumu, soliem un ziedošu koku">
+      </figure>
+    </div>
+  </div>
+
+    <section id="contacts"><div class="wrap">
+    <p class="clabel" data-lvtext="Kontakti" data-entext="Contacts">Kontakti</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Oskars</h3>
+        <p class="role" data-l="lv">Civinity · kvartāla pārstāvis</p>
+        <p class="role" data-l="en">Civinity · quarter representative</p>
+        <a class="tel" href="tel:+37124249979">2424 9979</a>
+      </div>
+      <div class="card">
+        <h3>Civinity</h3>
+        <p class="role" data-l="lv">Klientu serviss · diennakts</p>
+        <p class="role" data-l="en">Customer service · 24/7</p>
+        <a class="tel" href="tel:80001599">8000 1599</a>
+        <p class="mail"><a href="mailto:klientuserviss@civinity.lv">klientuserviss@civinity.lv</a></p>
+      </div>
+      <div class="card">
+        <h3 data-l="lv">Avārija</h3><h3 data-l="en">Emergency</h3>
+        <p class="role" data-l="lv">Tad ziņo Civinity (7.1.4.)</p>
+        <p class="role" data-l="en">Then notify Civinity (7.1.4.)</p>
+        <a class="tel" href="tel:112">112</a>
+      </div>
+      <div class="card">
+        <h3 data-l="lv">Pārvaldnieks</h3><h3 data-l="en">Manager</h3>
+        <p class="role" data-l="lv">Biedrība „Antonijas 17A”</p>
+        <p class="role" data-l="en">Association “Antonijas 17A”</p>
+        <p class="meta">Reģ. 40008274461</p>
+      </div>
+    </div>
+  </div></section>
+
+  <div class="tabbar">
+    <div class="wrap" role="tablist" aria-label="Noteikumi">
+      <button role="tab" id="t-news" aria-controls="p-news" aria-selected="true"
+              data-lvtext="Aktualitātes" data-entext="Updates">Aktualitātes</button>
+      <button role="tab" id="t-short" aria-controls="p-short" aria-selected="false"
+              data-lvtext="Noteikumi īsumā" data-entext="Rules in brief">Noteikumi īsumā</button>
+      <button role="tab" id="t-full" aria-controls="p-full" aria-selected="false"
+              data-lvtext="Pilni noteikumi" data-entext="Full rules">Pilni noteikumi</button>
+    </div>
+  </div>
+
+  <div id="p-news" role="tabpanel" aria-labelledby="t-news">
+    <section><div class="wrap">
+      <div class="shead">
+        <h2 data-l="lv">Aktualitātes</h2><h2 data-l="en">Updates</h2>
+        <p data-l="lv">Plānotie darbi, izmaiņas un paziņojumi iedzīvotājiem.</p>
+        <p data-l="en">Planned works, changes and notices for residents.</p>
+      </div>
+      <div id="news"></div>
+    </div></section>
+  </div>
+
+  <div id="p-short" role="tabpanel" aria-labelledby="t-short" hidden>
+    <section id="waste"><div class="wrap">
+      <div class="shead">
+        <h2 data-l="lv">Atkritumi</h2><h2 data-l="en">Waste</h2>
+        <p data-l="lv">Kvartālā nav bioloģisko atkritumu konteinera.</p>
+        <p data-l="en">There is no organic waste container in the quarter.</p>
+      </div>
+      <div class="rules" id="r-waste"></div>
+    </div></section>
+
+    <section id="must"><div class="wrap">
+      <div class="shead"><h2 data-l="lv">Kas jādara</h2><h2 data-l="en">What you must do</h2></div>
+      <div class="rules" id="r-must"></div>
+    </div></section>
+
+    <section id="ban"><div class="wrap">
+      <div class="shead">
+        <h2 data-l="lv">Kas ir aizliegts</h2><h2 data-l="en">What is prohibited</h2>
+        <p data-l="lv">Par Kodeksa pārkāpumiem Biedrība ir tiesīga piemērot sodus (9.3.4.).</p>
+        <p data-l="en">The association may impose penalties for breaches of the Code (9.3.4.).</p>
+      </div>
+      <div class="rules" id="r-ban"></div>
+    </div></section>
+  </div>
+
+  <div id="p-full" role="tabpanel" aria-labelledby="t-full" hidden>
+    <section><div class="wrap">
+      <div class="shead">
+        <h2 data-l="lv">Pilns Kodeksa teksts</h2><h2 data-l="en">Full text of the Code</h2>
+        <p data-l="lv">Visas desmit nodaļas. Sānos ir ātrā piekļuve nodaļām.</p>
+        <p data-l="en">All ten chapters, in Latvian only. Chapter shortcuts are in the sidebar.</p>
+      </div>
+      <p class="note" data-l="lv"><b>Pārbaudāms.</b> 5.–10. nodaļa sakrīt ar parakstīto eksemplāru. 1.–4. nodaļa ir no darba versijas un vēl nav salīdzināta — tās ir atzīmētas. Neskaidrību gadījumā noteicošais ir parakstītais eksemplārs pie pārvaldnieka.</p>
+      <p class="note" data-l="en"><b>To be verified.</b> Chapters 5–10 match the signed copy. Chapters 1–4 come from a working draft and have not been compared yet; they are marked. In case of any discrepancy, the signed copy held by the manager prevails.</p>
+      <div class="codegrid">
+        <nav class="toc" aria-label="Nodaļas">
+          <p class="toc-t" data-lvtext="Nodaļas" data-entext="Chapters">Nodaļas</p>
+          <div id="toc"></div>
+        </nav>
+        <div id="fulltext"></div>
+      </div>
+    </div></section>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <p data-l="lv">Neoficiāla iedzīvotāju lapa. Juridiski saistošs ir parakstītais Kodeksa eksemplārs. Lapa nav saistīta ar kvartāla attīstītāju.</p>
+  <p data-l="en">Unofficial residents' page. Only the signed copy of the Code is legally binding. Not affiliated with the developer of the quarter.</p>
+</div></footer>
+
+<script>
+/* =================================================================
+   AKTUALITĀTES
+   Ieraksti nāk no Google izklājlapas. Lai to pieslēgtu, ielīmē
+   izklājlapas ID starp pēdiņām zemāk. Vairāk nekas nav jāmaina.
+   ================================================================= */
+const SHEET_ID = '1IrF0px2hSBSHq2Whn6nYjgRptsLSGXVP_8ytjfQ6GUs';
+const SHEET_TAB = 'Aktualitates';
+
+const newsBox = document.getElementById('news');
+const say = (lv,en) => `<p class="empty"><span data-l="lv">${lv}</span><span data-l="en">${en}</span></p>`;
+
+/* minimal CSV parser: handles quoted fields, commas and line breaks inside them */
+function parseCSV(text){
+  const rows=[]; let row=[], field='', q=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(q){
+      if(c==='"'){ if(text[i+1]==='"'){ field+='"'; i++; } else q=false; }
+      else field+=c;
+    } else if(c==='"') q=true;
+    else if(c===','){ row.push(field); field=''; }
+    else if(c==='\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+    else if(c!=='\r') field+=c;
+  }
+  if(field||row.length){ row.push(field); rows.push(row); }
+  return rows.filter(r=>r.some(v=>v.trim()));
+}
+
+function renderNews(items){
+  if(!items.length){ newsBox.innerHTML = say('Šobrīd aktualitāšu nav.','No updates at the moment.'); return; }
+  newsBox.innerHTML = items.map(n=>{
+    const d = new Date(n.date);
+    const valid = !isNaN(d);
+    const lvD = valid ? d.toLocaleDateString('lv-LV',{day:'numeric',month:'long',year:'numeric'}) : n.date;
+    const enD = valid ? d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) : n.date;
+    return `<article class="post">
+      <time datetime="${valid ? d.toISOString().slice(0,10) : ''}"><span data-l="lv">${lvD}</span><span data-l="en">${enD}</span></time>
+      <h3><span data-l="lv">${n.tLv}</span><span data-l="en">${n.tEn || n.tLv}</span></h3>
+      <p><span data-l="lv">${n.bLv}</span><span data-l="en">${n.bEn || n.bLv}</span></p>
+    </article>`;
+  }).join('');
+}
+
+async function loadNews(){
+  if(!SHEET_ID){ renderNews([]); return; }
+  newsBox.innerHTML = say('Ielādē…','Loading…');
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_TAB)}`;
+  try{
+    const res = await fetch(url);
+    if(!res.ok) throw new Error(res.status);
+    const rows = parseCSV(await res.text()).slice(1);      // drop the header row
+    const items = rows
+      .map(r => ({date:(r[0]||'').trim(), tLv:(r[1]||'').trim(), bLv:(r[2]||'').trim(),
+                  tEn:(r[3]||'').trim(), bEn:(r[4]||'').trim(), show:(r[5]||'').trim().toLowerCase()}))
+      .filter(n => n.tLv && n.show !== 'nē' && n.show !== 'ne' && n.show !== 'no')
+      .sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+    renderNews(items);
+  }catch(e){
+    newsBox.innerHTML = say('Aktualitātes neizdevās ielādēt. Mēģini vēlāk.','Updates could not be loaded. Please try again later.');
+  }
+}
+loadNews();
+
+const RULES={
+ waste:[
+  ['7.1.3.','Šķiro atkritumus atbilstoši konteineru marķējumam.','Sort waste according to the container labels.'],
+  ['7.1.3.','Bioloģisko atkritumu konteinera kvartālā nav — pārtikas atliekas mest nešķirotajos sadzīves atkritumos.','There is no organic waste container — food waste goes in general waste.'],
+  ['7.1.3.','Lielgabarīta atkritumu izvešana iepriekš jāpiesaka Civinity: sadzīves tehnika, mēbeles, Ziemassvētku eglītes un līdzīgas lietas. Neatstāt tās pie konteineriem.','Bulky waste must be booked with Civinity in advance: appliances, furniture, Christmas trees and similar. Do not leave it beside the containers.'],
+  ['7.1.3.','Neuzglabāt atkritumus, arī maisos, koplietošanas telpās.','Do not store waste, including bagged waste, in common areas.'],
+  ['7.1.3.','Nekavējoties savākt sava dzīvnieka ekskrementus.','Clean up after your pet immediately.']
+ ],
+ must:[
+  ['7.1.4.','Avārijas situācijā nekavējoties ziņot attiecīgajam dienestam un pārvaldniekam.','Report an emergency immediately to the relevant service and the manager.'],
+  ['7.1.5.','Nodarītos bojājumus novērst vai atlīdzināt 20 darba dienu laikā.','Repair or compensate any damage you cause within 20 working days.'],
+  ['7.2.1.','Par remontdarbiem, kas ilgāki par stundu, brīdināt kaimiņus vismaz 3 dienas iepriekš.','Warn neighbours at least 3 days before renovation work lasting over an hour.'],
+  ['7.2.2.','Trokšņainos darbus veikt tikai darbdienās 9.00–18.00 un sestdienās 12.00–16.00.','Carry out noisy work only on weekdays 9:00–18:00 and Saturdays 12:00–16:00.'],
+  ['7.2.3.','Katras darba dienas beigās sakopt kāpņu telpu, gaiteni un liftu.','Clean the stairwell, corridor and lift at the end of each working day.'],
+  ['7.2.5.','No 1. novembra līdz 15. aprīlim dzīvoklī uzturēt vismaz +16 °C.','Keep at least +16 °C in your apartment from 1 November to 15 April.'],
+  ['6.4.','Uz Magdelēnas ielas ievērot Ceļu satiksmes noteikumus un uzstādītās zīmes un norādes.','On Magdelēnas Street, obey the traffic rules and the signs and markings in place.'],
+  ['1.1.','Nodrošināt, ka Kodeksu ievēro arī ģimenes locekļi, īrnieki un viesi. Par viņu pārkāpumiem atbild Īpašnieks.','Ensure that family members, tenants and guests also follow the Code. The owner is liable for their breaches.']
+ ],
+ ban:[
+  ['g','Ugunsdrošība','Fire safety'],
+  ['7.3.1.','Smēķēt autostāvvietā, garāžās, kāpņu telpās, gaiteņos, rotaļu laukumos un zaļajās zonās.','Smoking in the parking area, garages, stairwells, corridors, playgrounds and green areas.'],
+  ['7.3.2.','Smēķēt uz balkona, terases vai lodžijas, ja kaimiņš pret to pamatoti iebilst.','Smoking on a balcony, terrace or loggia if a neighbour reasonably objects.'],
+  ['7.3.4.','Kurināt ugunskuru vai grilu.','Open fires and barbecues.'],
+  ['7.3.5.','Izmantot pirotehniku.','Fireworks.'],
+  ['7.3.6.','Ienest vai glabāt ugunsbīstamas, viegli uzliesmojošas, kodīgas vai sprāgstošas vielas, ieročus un munīciju.','Bringing in or storing flammable, corrosive or explosive substances, weapons and ammunition.'],
+  ['g','Ēka un koplietošanas telpas','Building and common areas'],
+  ['7.3.3.','Novietot vai glabāt kāpņu telpās un autostāvvietā atkritumus, būvgružus, materiālus, mantas un velosipēdus. Bērnu ratiņi ir atļauti.','Storing waste, debris, materials, belongings or bicycles in stairwells and the parking area. Prams are allowed.'],
+  ['7.3.11.','Bojāt ēku, mainīt fasādes, ārdurvju vai logu izskatu un krāsu, izvietot plakātus.','Damaging the building, altering the appearance or colour of the façade, entrance doors or windows, putting up posters.'],
+  ['7.3.12.','Izvietot uz ēkas jumta jebkādas ierīces un konstrukcijas.','Installing any equipment or structures on the roof.'],
+  ['7.3.13.','Bojāt vai pārvietot reklāmas un informatīvās zīmes.','Damaging or moving advertising and information signs.'],
+  ['7.3.14.','Uzstādīt kondicionieri ārpus balkona. Atļauts tikai balkona iekšpusē ar pārvaldnieka rakstisku saskaņojumu.','Installing air conditioning outside the balcony. Permitted only inside the balcony, with the manager\u2019s written approval.'],
+  ['7.3.16.','Patvaļīgi veikt remontus kopīpašumā vai stādīt kokus un puķes.','Carrying out unauthorised repairs in common property or planting trees and flowers.'],
+  ['7.2.4.','Veidot nožogojumu, norobežojošas konstrukcijas vai dzīvžogu dzīvoklim pieguļošajā dārzā.','Putting up fences, barriers or hedges in the garden adjoining your apartment.'],
+  ['5.2.6.','Aizsegt vai aizmūrēt ventilāciju noliktavā.','Blocking or walling up the ventilation in the storage unit.'],
+  ['g','Miers un kārtība','Peace and order'],
+  ['7.3.8.','Trokšņot no 23.00 līdz 9.00. Nepamatota trokšņošana ir aizliegta jebkurā laikā.','Noise between 23:00 and 9:00. Unjustified noise is prohibited at any time.'],
+  ['7.3.9.','Vest dzīvnieku bez pavadas no 7.00 līdz 23.00.','Walking a pet off the leash between 7:00 and 23:00.'],
+  ['7.3.15.','Uzturēties vai pārvietoties pa citam dzīvoklim pieguļošo dārzu bez īpašnieka atļaujas.','Entering or crossing a garden adjoining another apartment without the owner\u2019s permission.'],
+  ['7.3.10.','Turēt mājdzīvniekus, kuru turēšana ir aizliegta ar likumu.','Keeping pets whose keeping is prohibited by law.'],
+  ['g','Transports','Traffic'],
+  ['6.2.','Braukt pa Magdelēnas ielu. Atļauts tikai piegādēm un operatīvajam transportam.','Driving on Magdelēnas Street. Permitted only for deliveries and emergency vehicles.'],
+  ['7.3.17.','Traucēt vai bloķēt piekļuvi autostāvvietām un garāžām.','Obstructing or blocking access to parking spaces and garages.'],
+  ['7.3.18.','Mazgāt, remontēt vai veikt profilaktisko apkopi auto kvartāla teritorijā, tostarp garāžā.','Washing, repairing or servicing vehicles in the quarter, including in garages.'],
+  ['g','Cits','Other'],
+  ['7.3.7.','Izmantot dzīvokli, garāžu vai noliktavu ražošanai un saimnieciskai darbībai.','Using an apartment, garage or storage unit for manufacturing or commercial activity.'],
+  ['2.5.','Ierobežot vai mainīt piekļuves režīmu kvartālam personām un transportlīdzekļiem.','Restricting or changing the access arrangements to the quarter for people and vehicles.']
+ ]
+};
+
+for(const [key,list] of Object.entries(RULES)){
+  document.getElementById('r-'+key).innerHTML = list.map(([ref,lv,en])=>ref==='g'
+    ? `<h3 class="grp"><span data-l="lv">${lv}</span><span data-l="en">${en}</span></h3>`
+    : `<div class="rule"><span class="ref">${ref}</span><p><span data-l="lv">${lv}</span><span data-l="en">${en}</span></p></div>`
+  ).join('');
+}
+
+document.getElementById('toc').innerHTML = "<a href=\"#n1\" data-nav=\"n1\"><span class=\"nn\">1</span>Vispārīgie noteikumi</a><a href=\"#n2\" data-nav=\"n2\"><span class=\"nn\">2</span>Kopīpašums un tā lietošanas kārtība</a><a href=\"#n3\" data-nav=\"n3\"><span class=\"nn\">3</span>Autostāvvietas īpašuma lietošanas kārtība</a><a href=\"#n4\" data-nav=\"n4\"><span class=\"nn\">4</span>Garāžu lietošanas kārtība</a><a href=\"#n5\" data-nav=\"n5\"><span class=\"nn\">5</span>Noliktava</a><a href=\"#n6\" data-nav=\"n6\"><span class=\"nn\">6</span>Ēkas publiskās ārtelpas joslas teritorija (Magdelēnas iela)</a><a href=\"#n7\" data-nav=\"n7\"><span class=\"nn\">7</span>Draudzīgā kaimiņu būšana</a><a href=\"#n8\" data-nav=\"n8\"><span class=\"nn\">8</span>Atsavināšana un apgrūtināšana</a><a href=\"#n9\" data-nav=\"n9\"><span class=\"nn\">9</span>Ēkas pārvaldīšana un Kvartāla attīstīšana</a><a href=\"#n10\" data-nav=\"n10\"><span class=\"nn\">10</span>Citi noteikumi</a>";
+document.getElementById('fulltext').innerHTML = "<article class=\"ch\" id=\"n1\"><h3><span class=\"chn\">1</span><span class=\"cht\">Vispārīgie noteikumi</span><span class=\"draft\">melnraksts</span></h3><div class=\"cl d1\"><span class=\"cn\">1.1.</span><p>Katrs Īpašnieks ar savu parakstu atzīst sev par saistošiem šī Kodeksa noteikumus, un Īpašniekam ir jānodrošina, ka Kodeksu ievēro arī Dzīvokļa īpašuma pārējie iedzīvotāji (t.sk. ģimenes locekļi) un/vai īrnieki un/vai nomnieki un/vai viesi (klienti/apmeklētāji). Īpašnieks ir atbildīgs par šī Kodeksa pārkāpšanu arī no šajā punktā minēto personu puses.</p></div><div class=\"cl d1\"><span class=\"cn\">1.2.</span><p>Ja persona, kurai pieder domājamā daļa no Autostāvvietas īpašuma un/vai Garāža, nav Īpašnieks (t.i. šai personai nepieder Dzīvokļa īpašums), tai ir saistoši šī Kodeksa noteikumi, ciktāl tie nav attiecināmi tikai uz Dzīvokļu īpašumu īpašniekiem.</p></div></article><article class=\"ch\" id=\"n2\"><h3><span class=\"chn\">2</span><span class=\"cht\">Kopīpašums un tā lietošanas kārtība</span><span class=\"draft\">melnraksts</span></h3><div class=\"cl d1\"><span class=\"cn\">2.1.</span><p>Katrs Dzīvokļa īpašums sastāv no Ēkā esoša atsevišķa dzīvokļa un tam piekrītošajām Antonijas 17A kopīpašuma daļām.</p></div><div class=\"cl d1\"><span class=\"cn\">2.2.</span><p>Antonijas 17A kopīpašums ir Antonijas 17A sastāvā ietilpstošais zemes gabals 5937 m2 platībā un Ēka un tās ārtelpu ārējās norobežojošās konstrukcijas (tai skaitā sienas, arhitektūras elementi, jumts, koplietošanas telpu logi un durvis, arī ārdurvis), iekšējās slodzi nesošas konstrukcijas (tai skaitā nesošas sienas un kolonnas, kā arī atsevišķos īpašumus norobežojošās sienas), starpstāvu pārsegumi (tai skaitā siltuma un skaņas izolācijas slāņi), koplietošanas telpas (tai skaitā bēniņi, kāpņu telpas), kā arī Ēkas inženierkomunikāciju sistēmas, iekārtas un citi ar Ēkas ekspluatāciju saistīti funkcionāli nedalāmi elementi, kas nepieder pie atsevišķiem īpašumiem (dzīvokļiem vai Autostāvvietas īpašuma).</p></div><div class=\"cl d1\"><span class=\"cn\">2.3.</span><p>Katram Īpašniekam ir saudzīgi jāizturas pret Antonijas 17A kopīpašumā esošo daļu, jāievēro tās lietošanas noteikumi, kā arī tiesību aktos noteiktās sanitārās, ugunsdrošības un citas prasības, lai neradītu apdraudējumu Kvartāla iedzīvotāju un citu cilvēku drošībai un veselībai, apkārtējās vides kvalitātei.</p></div><div class=\"cl d1\"><span class=\"cn\">2.4.</span><p>Katrs Īpašnieks noteikti, neatsaucami un bez nosacījumiem piekrīt inženiertehniskās apgādes tīklu un inženierbūvju remontam vai rekonstrukcijai Antonijas 17A kopīpašumā, ja tas tiek darīts saskaņā ar tiesību aktiem.</p></div><div class=\"cl d1\"><span class=\"cn\">2.5.</span><p>Īpašniekam nav tiesību ierobežot un/vai mainīt esošo piekļuves režīmu (personām un transportlīdzekļiem) Kvartālam, bojāt inženiertehniskos apgādes tīklus un inženierbūves un/vai traucēt to darbību.</p></div></article><article class=\"ch\" id=\"n3\"><h3><span class=\"chn\">3</span><span class=\"cht\">Autostāvvietas īpašuma lietošanas kārtība</span><span class=\"draft\">melnraksts</span></h3><div class=\"cl d1\"><span class=\"cn\">3.1.</span><p>Katrs Īpašnieks, kuram pieder domājamā daļa no Autostāvvietas īpašuma, ir tiesīgs novietot vieglo transportlīdzekli (automašīnu, ko var vadīt ar B kategorijas autovadītāja apliecību, motociklu, mopēdu, triciklu, kvadriciklu vai velosipēdu) tam iepriekš ierādītajā autostāvvietā saskaņā ar marķējumu, ievērojot šī Kodeksa noteikumus.</p></div><div class=\"cl d1\"><span class=\"cn\">3.2.</span><p>Īpašnieka, kuram pieder domājamā daļa no Autostāvvietas īpašuma, tiesību un pienākumu apjoms saistībā ar Autostāvvietas īpašumu ir nosakāms pēc analoģijas ar dzīvokļu īpašumu, kā to regulē Dzīvokļa īpašuma likums un Dzīvojamo māju pārvaldīšanas likums, kā arī citas dzīvokļu īpašumu tiesiskajām attiecībām piemērojamās tiesību normas, ciktāl šis Kodekss nenosaka citādāk. Šajā sakarā (ar mērķi piemērot minētajos tiesību aktos ietverto regulējumu Kodeksā regulētajām attiecībām):</p></div><div class=\"cl d2\"><span class=\"cn\">3.2.1.</span><p>katram Īpašniekam ir tik balsis, cik domājamās daļas no Autostāvvietas īpašuma tam pieder;</p></div><div class=\"cl d2\"><span class=\"cn\">3.2.2.</span><p>Autostāvvietas īpašuma domājamo daļu Īpašnieki kopīgi lietos un uzturēs Autostāvvietas īpašumu, t.sk., veiks uzkopšanu un remontus un segs ar Autostāvvietas īpašumu saistītos izdevumus;</p></div><div class=\"cl d2\"><span class=\"cn\">3.2.3.</span><p>kopējos uz visu Autostāvvietas īpašumu gulstošos maksājumus un nastas Autostāvvietas īpašuma domājamo daļu Īpašnieki segs proporcionāli to īpašumā esošo Autostāvvietas īpašumā domājamo daļu apmēram;</p></div><div class=\"cl d2\"><span class=\"cn\">3.2.4.</span><p>ar Autostāvvietas īpašuma lietošanu un pārvaldīšanu (t.sk., uzkopšanu, labiekārtošanu un remontu) saistīto lēmumu pieņemšanā Autostāvvietas domājamo daļu Īpašnieki apņemas atzīt sev par saistošiem un pildīt lēmumus (t.sk., no tiem izrietošās tiesības un pienākumus), ja tie pieņemti tādā kārtībā, kāda attiecīgā lēmuma pieņemšanas laikā attiecas uz nekustamajiem īpašumiem, kas ir sadalīti dzīvokļu īpašumos (t.sk., lēmumu pieņemšana ar balsu vairākumu, nevis vienbalsīgi).</p></div><div class=\"cl d1\"><span class=\"cn\">3.3.</span><p>Īpašnieks, kuram pieder domājamā daļa no Autostāvvietas īpašuma:</p></div><div class=\"cl d2\"><span class=\"cn\">3.3.1.</span><p>neatsaucami atsakās no pirmpirkuma tiesību un izpirkuma tiesību izmantošanas iegādāties citiem Autostāvvietas īpašuma Īpašniekiem piederošās domājamās daļas no Autostāvvietas īpašuma, ja tās tiek atsavinātas;</p></div><div class=\"cl d2\"><span class=\"cn\">3.3.2.</span><p>bez citu Īpašnieku piekrišanas, bet ievērojot Kodeksa nosacījumus, ir tiesīgs sev piederošo Autostāvvietas īpašuma domājamo daļu atsavināt, izīrēt, iznomāt, ieķīlāt, vai citādi apgrūtināt ar lietu tiesībām;</p></div><div class=\"cl d2\"><span class=\"cn\">3.3.3.</span><p>ir vienīgā persona, kas ir tiesīga pretendēt uz labumiem un augļiem, ko tas iegūst saistībā ar sev piederošo domājamo daļu no Autostāvvietas īpašuma;</p></div><div class=\"cl d2\"><span class=\"cn\">3.3.4.</span><p>piekrīt, ka Autostāvvietas īpašums kā kopīpašums ir nedalāms Civillikuma normu izpratnē, t.i. nevar tikt reāli sadalīts;</p></div><div class=\"cl d2\"><span class=\"cn\">3.3.5.</span><p>noteikti, neatsaucami un bez nosacījumiem piekrīt inženiertehniskās apgādes tīklu un inženierbūvju remontam vai rekonstrukcijai Autostāvvietas īpašumā, ja tas attiecas uz Ēkas kopīpašuma inženiertīkliem un tiek darīts saskaņā ar tiesību aktiem;</p></div><div class=\"cl d2\"><span class=\"cn\">3.3.6.</span><p>apņemas labticīgi izmantot Autostāvvietas īpašumu, tajā skaitā ievērojot piebraucamā ceļa pārvietošanai atļauto transporta līdzekļu vai mehānismu gabarītus un/vai pilnu masu (vai slodzi uz ceļu) atbilstoši Kvartālā izvietotajām informatīvajām zīmēm;</p></div><div class=\"cl d1\"><span class=\"cn\">3.4.</span><p>Īpašnieki, kuriem nepieder domājamā daļa no Autostāvvietas īpašuma un citi Ēkas apmeklētāji ir tiesīgi brīvi pārvietoties (kā gājēji) pa Autostāvvietas īpašumu, netraucējot transporta kustību, novietošanu un citus Īpašniekus, savukārt Īpašniekam, kuram pieder domājamā daļa no Autostāvvietas īpašuma, nav tiesību ierobežot pārējos Īpašniekus un citus Kvartāla apmeklētājus izmantot Autostāvvietas īpašumu atbilstoši šim Kodeksa punktam.</p></div><div class=\"cl d1\"><span class=\"cn\">3.5.</span><p>Īpašnieks piekrīt un apņemas ievērot trešajām personām piešķirtās tiesības lietot Autostāvvietas īpašumu un Autostāvvietas kopējo brauktuvi (tajā skaitā Kvartāla apmeklētājiem). Īpašniekam nav tiesību lietot nevienu citu Autostāvvietas īpašuma autostāvvietu, izņemot to, uz kuru ir attiecināma Īpašniekam piederošā domājamā daļa no Autostāvvietas īpašuma un/vai tam ir citādi ierādīta un piešķirta lietošanā kāda no Autostāvvietas īpašuma autostāvvietām.</p></div><div class=\"cl d1\"><span class=\"cn\">3.6.</span><p>Īpašnieks apņemas pēc Antonija 17A pārvaldnieka lūguma pielikt saprātīgas pūles, lai uz laiku atbrīvotu Autostāvvietas īpašumu, lai būtu iespējams veikt Autostāvvietas īpašuma tīrīšanu.</p></div></article><article class=\"ch\" id=\"n4\"><h3><span class=\"chn\">4</span><span class=\"cht\">Garāžu lietošanas kārtība</span><span class=\"draft\">melnraksts</span></h3><div class=\"cl d1\"><span class=\"cn\">4.1.</span><p>Katrs Īpašnieks, kuram pieder Garāža, ir tiesīgs novietot vieglo transportlīdzekli (automašīnu ko var vadīt ar B kategorijas autovadītāja apliecību, motociklu, mopēdu, triciklu, kvadriciklu vai velosipēdu) un/vai personīgo mantu savā Garāžā, ievērojot šī Kodeksa noteikumus.</p></div><div class=\"cl d1\"><span class=\"cn\">4.2.</span><p>Īpašnieks, kuram pieder Garāža:</p></div><div class=\"cl d2\"><span class=\"cn\">4.2.1.</span><p>ir tiesīgs netraucēti un pēc saviem ieskatiem (šī Kodeksa un tiesību aktu ietvaros) lietot tam piederošo Garāžu;</p></div><div class=\"cl d2\"><span class=\"cn\">4.2.2.</span><p>nepārbūvēs un neizmantos Garāžu par dzīvojamo platību;</p></div><div class=\"cl d2\"><span class=\"cn\">4.2.3.</span><p>par saviem līdzekļiem lietos un uzturēs Garāžu, t.sk., veiks Garāžas uzkopšanu un remontus un segs ar Garāžu saistītos izdevumus, gulstošos maksājumus un nastas;</p></div><div class=\"cl d2\"><span class=\"cn\">4.2.4.</span><p>bez citu Īpašnieku piekrišanas, bet ievērojot Kodeksa nosacījumus, ir tiesīgs sev piederošo Garāžu atsavināt, izīrēt, iznomāt, ieķīlāt vai citādi apgrūtināt ar lietu;</p></div><div class=\"cl d2\"><span class=\"cn\">4.2.5.</span><p>ir vienīgā persona, kas ir tiesīga pretendēt uz labumiem un augļiem, ko tas iegūst saistībā ar sev piederošo Garāžu;</p></div><div class=\"cl d2\"><span class=\"cn\">4.2.6.</span><p>noteikti, neatsaucami un bez nosacījumiem piekrīt inženiertehniskās apgādes tīklu un inženierbūvju remontam vai rekonstrukcijai Garāžā, ja tas tiek darīts saskaņā ar tiesību aktiem;</p></div><div class=\"cl d2\"><span class=\"cn\">4.2.7.</span><p>apņemas labticīgi izmantot Garāžu, tajā skaitā ievērojot piebraucamā ceļa pārvietošanai atļauto transporta līdzekļu vai mehānismu gabarītus un/vai pilnu masu (vai slodzi uz ceļu) atbilstoši Kvartālā izvietotajām informatīvajām zīmēm;</p></div><div class=\"cl d1\"><span class=\"cn\">4.3.</span><p>To darbību veikšanai, kas skar citiem Īpašniekiem piederošās Garāžas, ir nepieciešama attiecīgo Īpašnieku piekrišana (saskaņojums) vai piekrišana.</p></div></article><article class=\"ch\" id=\"n5\"><h3><span class=\"chn\">5</span><span class=\"cht\">Noliktava</span></h3><div class=\"cl d1\"><span class=\"cn\">5.1.</span><p>Ņemot vērā, ka Noliktavas īpašums ir daļa no Antonijas 17A kopīpašuma, Īpašnieku tiesības un pienākumi attiecībā uz Noliktavas īpašumu nosakāmi atbilstoši kopīpašuma regulējumam, ciktāl Kodeksā nav noteikts citādāk.</p></div><div class=\"cl d1\"><span class=\"cn\">5.2.</span><p>Attiecībā uz Noliktavas īpašumu Īpašnieks:</p></div><div class=\"cl d2\"><span class=\"cn\">5.2.1.</span><p>ir tiesīgs pēc saviem ieskatiem (šī Kodeksa un tiesību aktu ietvaros) lietot tam atsevišķā lietošanā nodoto Noliktavu;</p></div><div class=\"cl d2\"><span class=\"cn\">5.2.2.</span><p>nepārbūvēs un neizmantos Noliktavu par dzīvojamo platību;</p></div><div class=\"cl d2\"><span class=\"cn\">5.2.3.</span><p>patstāvīgi un par saviem līdzekļiem uzturēs, remontēs un uzkops tā atsevišķā lietošanā nodoto Noliktavu, kā arī segs ar tās lietošanu saistītos izdevumus un maksājumus;</p></div><div class=\"cl d2\"><span class=\"cn\">5.2.4.</span><p>un pārējie Īpašnieki kopīgi lietos un uzturēs Noliktavas īpašuma kopējo daļu (t.i. Noliktavas īpašuma daļu, kas nav Īpašniekiem atsevišķā lietošanā nodotas Noliktavas), t.sk., veiks uzkopšanu un remontus un segs ar to saistītos izdevumus proporcionāli katra Īpašnieka kopīpašuma daļai Antonijas 17A;</p></div><div class=\"cl d2\"><span class=\"cn\">5.2.5.</span><p>nedrīkst bojāt un viņam ir pienākums saudzīgi izturēties pret Noliktavas īpašumā esošajiem elementiem (t.sk., kopējās komunikācijas un citas ar Noliktavas īpašuma vai Ēkas ekspluatāciju funkcionāli nedalāmi saistītu elementu daļas);</p></div><div class=\"cl d2\"><span class=\"cn\">5.2.6.</span><p>nav tiesīgs aizsegt, aizmūrēt vai citādi ierobežot ventilāciju (gaisa plūsmu) Noliktavā;</p></div><div class=\"cl d2\"><span class=\"cn\">5.2.7.</span><p>to darbību veikšanai, kas skar citiem Īpašniekiem piederošās Noliktavas un/vai Noliktavas īpašuma kopējo daļu, ir nepieciešama attiecīgo Īpašnieku piekrišana (saskaņojums) vai pārējo Īpašnieku piekrišana;</p></div><div class=\"cl d2\"><span class=\"cn\">5.2.8.</span><p>noteikti, neatsaucami un bez nosacījumiem piekrīt inženiertehniskās apgādes tīklu un inženierbūvju remontam vai rekonstrukcijai Noliktavas īpašumā, ja tas attiecas uz Ēkas kopīpašuma inženiertīkliem un tiek darīts saskaņā ar tiesību aktiem.</p></div></article><article class=\"ch\" id=\"n6\"><h3><span class=\"chn\">6</span><span class=\"cht\">Ēkas publiskās ārtelpas joslas teritorija (Magdelēnas iela)</span></h3><div class=\"cl d1\"><span class=\"cn\">6.1.</span><p>Īpašnieks ir informēts un piekrīt, ka Kvartāla ietvaros pakāpeniski tiks izbūvēts gājēju ceļš (turpmāk tekstā – \"Magdelēnas iela\"), kas cita starpā ies gar Ēku un kas ir paredzēts tikai gājējiem.</p></div><div class=\"cl d1\"><span class=\"cn\">6.2.</span><p>Īpašnieks ir informēts un piekrīt, ka attiecībā uz Magdelēnas ielu ir nodibināts personālservitūts (turpmāk tekstā – \"Personālservitūts\") par labu Nodibinājumam \"Magdelēnas kvartāls\", reģistrācijas Nr. 40008276513 (turpmāk tekstā – \"Nodibinājums\"), ar mērķi, (I) lai Kvartālam un Magdelēnas iela tiktu attīstīti (apbūvēti un izbūvēti) saskaņā ar Kvartāla detālplānojumā noteikto, kā arī (II) lai Magdelēnas iela – pa daļai katrā no šādi attīstītiem Kvartāla sastāvā ietilpstošiem īpašumiem un tādēļ arī kopumā pēc attīstīšanas – turpmāk būtu (i) pieejama visai sabiedrībai, t.sk., Kvartāla Īpašniekiem, iedzīvotājiem un lietotājiem, kā arī citiem apmeklētājiem, (ii) paliktu brīva no autotransporta, nepieciešamības gadījumā izņemot piegādes un operatīvajiem transportlīdzekļiem, un (iii) tiktu lietota, uzturēta, remontēta, pārbūvēta un citādi mainīta vienīgi, ievērojot līguma par Personālservitūta nodibināšanu noteikumus.</p></div><div class=\"cl d1\"><span class=\"cn\">6.3.</span><p>Īpašnieks, Biedrība un Pārvaldnieks apliecina, ka tiem ir zināms līguma par Personālservitūta nodibināšanu saturs un katrs no viņiem apņemas ievērot minētā līguma noteikumus.</p></div><div class=\"cl d1\"><span class=\"cn\">6.4.</span><p>Visiem Kvartāla iedzīvotājiem, kā arī personām, kuras atrodas Kvartālā, uz Magdelēnas ielas ir pienākums ievērot Ceļu satiksmes noteikumus un (šobrīd un nākotnē) uzstādītās zīmes, grafiskās navigācijas vadlīnijas un tamlīdzīgas norādes, kā arī ir aizliegts bloķēt un/vai mainīt šīs zīmes, vadlīnijas un norādes. Īpašnieks apliecina, ka Īpašniekam ir zināmas visas minētās zīmes, vadlīnijas un norādes, kas ir uzstādītas Kodeksa parakstīšanas brīdī.</p></div></article><article class=\"ch\" id=\"n7\"><h3><span class=\"chn\">7</span><span class=\"cht\">Draudzīgā kaimiņu būšana</span></h3><div class=\"cl d1\"><span class=\"cn\">7.1.</span><p>Visiem Kvartāla iedzīvotājiem, kā arī personām, kuras atrodas Kvartālā, ir pienākums:</p></div><div class=\"cl d2\"><span class=\"cn\">7.1.1.</span><p>saudzīgi izturēties pret Kvartālu, ievērot tiesību aktos noteiktās sanitārās, ugunsdrošības un citas prasības, lai neradītu aizskārumu citu cilvēku drošībai un veselībai, apkārtējās vides kvalitātei;</p></div><div class=\"cl d2\"><span class=\"cn\">7.1.2.</span><p>ievērot sabiedrības vispārīgi pieņemtās ētiskās normas, pieklājīgi un korekti komunicēt ar Kvartāla iedzīvotājiem un citām personām;</p></div><div class=\"cl d2\"><span class=\"cn\">7.1.3.</span><p>nepiemēslot Kvartālu un nemest atkritumus tiem neparedzētās vietās, t.sk. neuzglabāt atkritumus (maisos vai citā veidā) Ēkas koplietošanas telpās un nekavējoties savākt savu dzīvnieku ekskrementus;</p></div><div class=\"cl d2\"><span class=\"cn\">7.1.4.</span><p>avārijas situācijās nekavējoties paziņot par šādu avārijas situāciju atbilstošajai iestādei un Antonijas 17A pārvaldniekam vai jebkurai citai pārvaldnieka nozīmētai personai;</p></div><div class=\"cl d2\"><span class=\"cn\">7.1.5.</span><p>gadījumā, ja Īpašnieka un/vai citu no viņa atkarīgo un/vai saistīto personu vainas (darbības un/vai bezdarbības) dēļ Kvartālam un/vai tā iedzīvotājiem un/vai tajā esošajiem transporta līdzekļiem un/vai mantai tiek radīts kaitējums (bojājumi/zaudējumi), 20 (divdesmit) darba dienu laikā pēc kaitējuma nodarīšanas un/vai trešo personu pamatota pieprasījuma saņemšanas par saviem līdzekļiem novērst visus nodarītos bojājumus vai atlīdzināt izdevumus, kas radušies tos novēršot neatliekamos gadījumos.</p></div><div class=\"cl d2\"><span class=\"cn\">7.1.6.</span><p>ievērot Ceļu satiksmes noteikumus un uzstādītās zīmes, braukšanas virzienu norādes un tamlīdzīgas norādes;</p></div><div class=\"cl d1\"><span class=\"cn\">7.2.</span><p>Attiecībā uz remontdarbiem savā Dzīvokļa īpašumā Īpašnieks:</p></div><div class=\"cl d2\"><span class=\"cn\">7.2.1.</span><p>savlaicīgi (t.i. vismaz trīs dienas iepriekš) brīdina citus Īpašniekus par plānotajiem remontdarbiem, ja plānoto remontdarbu ilgums paredzams vairāk kā par vienu stundu;</p></div><div class=\"cl d2\"><span class=\"cn\">7.2.2.</span><p>veic remontdarbus un citus ar traucējumiem Antonijas 17A iedzīvotājiem un apmeklētājiem saistītus darbus tikai darba dienās no 9.00 līdz 18.00 un sestdienās no 12.00 līdz 16.00;</p></div><div class=\"cl d2\"><span class=\"cn\">7.2.3.</span><p>katras darba dienas beigās nodrošina, lai stāva kāpņu telpa, stāva gaitenis, kā arī remontdarbu laikā lietotās lifta kabīnes un citas koplietošanas telpas būtu tīras, lai visi atkritumi ir savākti un novietoti tam paredzētajā vietā;</p></div><div class=\"cl d2\"><span class=\"cn\">7.2.4.</span><p>nav tiesīgs būtiski mainīt savam Dzīvokļa īpašumam pieguļošo dārzu, t.sk. nedrīkst izvietot jebkāda veida nožogojumu vai citas norobežojošās konstrukcijas, nedrīkst veidot dzīvžogu;</p></div><div class=\"cl d2\"><span class=\"cn\">7.2.5.</span><p>veicot apkures sistēmas elementu regulēšanu Dzīvokļa īpašumā, nodrošina, lai gaisa temperatūra Dzīvokļa īpašumā nebūtu mazāka par 16 grādiem pēc Celsija skalas periodā no 1. novembra līdz 15. aprīlim.</p></div><div class=\"cl d1\"><span class=\"cn\">7.3.</span><p>Visiem Kvartāla iedzīvotājiem, kā arī personām, kuras atrodas Kvartālā, ir aizliegts:</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.1.</span><p>smēķēt Autostāvvietā, Garāžās, Ēkas kāpņu telpās, gaiteņos un citās koplietošanas telpās, kā arī Kvartāla bērnu rotaļu laukumos un zaļajās zonās;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.2.</span><p>smēķēt uz Ēkas balkoniem, terasēm un lodžijām, ja kāds no Ēkas iedzīvotājiem pret to pamatoti iebilst;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.3.</span><p>novietot vai uzglabāt Ēkas koplietošanas telpās (t.sk., bet ne tikai, kāpņu telpā, zālājā) un Autostāvvietas īpašumā jebkādus sadzīves atkritumus, būvgružus, materiālus, vai citas mantas, tai skaitā riteņus, izņemot bērnu ratus;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.4.</span><p>kurināt ugunskuru vai grilu;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.5.</span><p>izmantot pirotehniskos izstrādājumus;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.6.</span><p>ienest un/vai glabāt (t.sk. Dzīvokļa īpašumā, Garāžā, Noliktavā, Autostāvvietas īpašumā, Magdelēnas ielā) ugunsbīstamas, viegli uzliesmojošas, kodīgas, sprāgstošas, dūmus izraisošas, smaku izraisošas vai citas bīstamas vielas un/vai materiālus, kā arī ieročus, munīciju un citu ar tiesību aktiem aizliegtu mantu;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.7.</span><p>izmantot Dzīvokļa īpašumu un/vai Garāžu un/vai Noliktavu ražošanai un citai saimnieciskajai darbībai, izņemot tam speciāli paredzētās telpas;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.8.</span><p>laikā no plkst. 23.00 līdz plkst. 9.00 trokšņot vai citādi radīt traucējumus citiem Kvartāla iedzīvotājiem. Nepamatota trokšņošana un miera traucēšana ir aizliegta jebkurā gadījumā;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.9.</span><p>laikā no plkst. 7.00 līdz plkst. 23.00 vest pastaigā dzīvniekus Kvartāla teritorijā bez pavadas;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.10.</span><p>turēt Ēkā mājdzīvniekus, kuru turēšana ir aizliegta saskaņā ar tiesību aktiem;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.11.</span><p>bojāt Ēku (t.sk. Ēkas mainīt Ēkas ārdurvju, logu, kā arī to rāmju un kārbu formu un ārējo virsmu izskatu, krāsu vai apdari, izvietot pie Ēkas sienām plakātus vai uzrakstus, vai veikt jebkādas citas darbības, kas izmaina Ēkas fasādi) un citas Kvartāla celtnes, žogus, citas būves un arhitektoniskos elementus;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.12.</span><p>izvietot uz Ēkas jumta jebkādas ierīces un lietas, kā arī noslogot Ēkas konstrukcijas tam neatbilstošā veidā;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.13.</span><p>bojāt vai pārvietot reklāmas un informatīvās zīmes (aizlieguma, brīdinājuma, ierobežojuma u.c. zīmes) vai citus sabiedriskās lietošanas objektus Kvartālā;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.14.</span><p>uzstādīt un/vai izbūvēt Dzīvokļa īpašumam piegulošajās platībās instalācijas, kuras var bojāt un/vai izmainīt Ēkas ārējo izskatu. Kondicionēšanas iekārtas Īpašnieks var uzstādīt tikai sava Dzīvokļa īpašuma balkona/terases iekšpusē, to iepriekš rakstveidā saskaņojot ar Antonijas 17A pārvaldnieku (Biedrību);</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.15.</span><p>izmantot un/vai pārvietoties pa citam Dzīvokļa īpašumam pieguļošo dārzu bez attiecīgā Dzīvokļa īpašnieka piekrišanas;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.16.</span><p>patvaļīgi veikt Kopīpašumā jebkādus remontus vai uzlabojumus, t.sk. sēt, stādīt un izveidot jaunus apstādījumus, kokus, puķes u.c.;</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.17.</span><p>traucēt lietot Autostāvvietas īpašumu vai Garāžas to Īpašniekiem vai citām personām, kam ir tiesības lietot minētos īpašumus, t.sk. aizliegts traucēt vai bloķēt piekļuvi šiem īpašumiem.</p></div><div class=\"cl d2\"><span class=\"cn\">7.3.18.</span><p>Kvartāla teritorijā (t.sk. Autostāvvietas īpašumā vai Garāžā) mazgāt un veikt mehānisko transportlīdzekļu remontu vai profilaktisko apkopi (eļļas vai citu dzinēja šķidrumu maiņa, motora mazgāšana u.tml.).</p></div></article><article class=\"ch\" id=\"n8\"><h3><span class=\"chn\">8</span><span class=\"cht\">Atsavināšana un apgrūtināšana</span></h3><div class=\"cl d1\"><span class=\"cn\">8.1.</span><p>Īpašnieks ir tiesīgs brīvi atsavināt (pārdot, mainīt, dāvināt u.c.) un/vai izīrēt, iznomāt, nodot lietošanā u.c. un/vai apgrūtināt ar lietu tiesībām sev piederošo Dzīvokļa īpašumu un/vai domājamo daļu no Autostāvvietas īpašuma un/vai Garāžu, par to iepriekš informējot Biedrību (izņemot ķīlas gadījumā).</p></div><div class=\"cl d1\"><span class=\"cn\">8.2.</span><p>Atsavinot Dzīvokļa īpašumu, Īpašniekam ir pienākums to atsavināt tikai kopā ar šim Dzīvokļa īpašumam piesaistītās Noliktavas lietošanas tiesībām.</p></div><div class=\"cl d1\"><span class=\"cn\">8.3.</span><p>Katram Īpašniekam ir pienākums Dzīvokļa īpašuma un/vai domājamo daļu no Autostāvvietas īpašuma un/vai Garāžas atsavināšanas gadījumā iekļaut atsavinājuma līgumā nosacījumu, ka jaunajam attiecīgā īpašuma ieguvējam ir saistošs šis Kodekss.</p></div><div class=\"cl d1\"><span class=\"cn\">8.4.</span><p>Lai nodrošinātu papildus garantiju tam, ka Kodeksā noteiktā atsavināšanas kārtība ir saistoša trešajām personām un turpmākajiem Dzīvokļu īpašumu un/vai domājamo daļu no Autostāvvietas īpašuma un/vai Garāžu īpašniekiem (pircējiem):</p></div><div class=\"cl d2\"><span class=\"cn\">8.4.1.</span><p>Īpašnieks, pilnībā vai daļēji atsavinot, dāvinot vai citādi nododot šajā punktā minētos īpašumus, nodrošina, ka šis Kodekss attiecībā uz atsavināšanas kārtību ir saistošs trešajai personai, kura iegūst īpašumā šos īpašumus (t.i., minētā trešā persona uzņemas šajā Kodeksā noteiktās Īpašnieka tiesības un pienākumus);</p></div><div class=\"cl d2\"><span class=\"cn\">8.4.2.</span><p>par līdz Īpašnieka tiesību un saistību pārejai neizpildītajām saistībām atbild Īpašnieks. Par turpmākajām saistībām attiecībā uz šajā punktā minēto īpašumu atbild Īpašnieka tiesību un saistību pārņēmējs vai vēlākais (nākamais) tiesību un saistību pārņēmējs (vairākkārtējas pārņemšanas gadījumā). Tomēr, ja Īpašnieks vai vēlākais (nākamais) tiesību un saistību pārņēmējs (vairākkārtējas pārņemšanas gadījumā) nav pienācīgi nodevis savas no šī Kodeksa izrietošās tiesības un saistības, tad par neizpildītajām saistībām solidāri atbild gan tiesību un saistību pārņēmējs vai vēlākais (nākamais) tiesību un saistību pārņēmējs (vairākkārtējas pārņemšanas gadījumā), gan arī Īpašnieks vai vēlākais (nākamais) tiesību un saistību pārņēmējs (vairākkārtējas pārņemšanas gadījumā), kurš nav pienācīgi nodevis no šī Kodeksa izrietošās tiesības un saistības pārņēmējam vai vēlākajam (nākamajam) pārņēmējam (vairākkārtējas pārņemšanas gadījumā).</p></div></article><article class=\"ch\" id=\"n9\"><h3><span class=\"chn\">9</span><span class=\"cht\">Ēkas pārvaldīšana un Kvartāla attīstīšana</span></h3><div class=\"cl d1\"><span class=\"cn\">9.1.</span><p>Lai veicinātu Ēkas kvalitatīvu un vienotu pārvaldīšanu, Īpašnieks piekrīt, ka Antonijas 17A (t.sk. Ēkai, Garāžām un Autostāvvietas īpašumam) var būt tikai viens kopīgs pārvaldnieks, un neviena vienošanās par pretējo nav spēkā. Minētais pārvaldnieks ir tiesīgs nodot atsevišķas Antonijas 17A pārvaldīšanas funkcijas trešajai personai saskaņā ar Antonijas 17A dzīvokļu īpašnieku kopības lēmumu.</p></div><div class=\"cl d1\"><span class=\"cn\">9.2.</span><p>Ēkas pārvaldnieks ir Biedrība “Antonijas 17A”, reģistrācijas Nr. 40008274461 (turpmāk un iepriekš saukta – “Biedrība”).</p></div><div class=\"cl d1\"><span class=\"cn\">9.3.</span><p>Biedrībai ir tiesības Īpašnieka vārdā cita starpā veikt šādas darbības:</p></div><div class=\"cl d2\"><span class=\"cn\">9.3.1.</span><p>slēgt līgumus par Antonijas 17A pārvaldīšanu un apsaimniekošanu;</p></div><div class=\"cl d2\"><span class=\"cn\">9.3.2.</span><p>slēgt līgumus par komunālo pakalpojumu saņemšanu Antonijas 17A;</p></div><div class=\"cl d2\"><span class=\"cn\">9.3.3.</span><p>veikt un organizēt Antonijas 17A pārvaldīšanas darbību veikšanu;</p></div><div class=\"cl d2\"><span class=\"cn\">9.3.4.</span><p>noteikt sodus Īpašniekiem par šī Kodeksa pārkāpšanu, kā arī lemt par Īpašnieku sodīšanu par šī Kodeksa pārkāpšanu;</p></div><div class=\"cl d1\"><span class=\"cn\">9.4.</span><p>Īpašnieks apņemas segt (kompensēt Biedrībai un/vai citai trešajai personai, ja tāda noteikta) Antonijas 17A pārvaldīšanas un apsaimniekošanas izdevumus proporcionāli tā īpašumā esošajam Dzīvokļa īpašuma kopīpašuma domājamo daļu apmēram vai citā apmērā, ja to nosaka Kodekss, tiesību akti vai dzīvokļu īpašnieku kopība.</p></div><div class=\"cl d1\"><span class=\"cn\">9.5.</span><p>Antonijas 17A dzīvokļu īpašnieku kopība ar vienkāršu balsu vairākumu nav tiesīga pieņemt lēmumus, kas ir pretēji šim Kodeksam. Pretēji šim Kodeksam pieņemti lēmumi būs spēkā tikai tad, kad tie ir pieņemti ar 2/3 (divu trešdaļu) Īpašnieku apstiprinājumu.</p></div><div class=\"cl d1\"><span class=\"cn\">9.6.</span><p>Īpašnieks apņemas nodrošināt Antonijas 17A pārvaldnieka norīkoto speciālistu iekļūšanu Dzīvokļa īpašumā, Noliktavā, Garāžā un Autostāvvietas īpašumā, lai tie varētu veikt komunikāciju tīklu daļu (t.sk. skaitītāju) apsekošanu un visas citas nepieciešamās darbības, lai nodrošinātu Ēkas komunikāciju tīkla normālu funkcionēšanu.</p></div><div class=\"cl d1\"><span class=\"cn\">9.7.</span><p>Īpašnieks apņemas savlaicīgi un pienācīgi iesniegt Biedrībai Dzīvokļa īpašumā un/vai Garāžā esošo skaitījumu rādījumus, ja līgumā par Antonijas 17A pārvaldīšanu un apsaimniekošanu nav noteikts citādāk.</p></div><div class=\"cl d1\"><span class=\"cn\">9.8.</span><p>Ņemot vērā noslēgto līgumu ar AS “Rīgas siltums”, Īpašniekam un/vai Biedrībai līdz 2026./2027. gada apkures sezonai (ieskaitot) nav tiesību slēgt līgumu par siltā ūdens un apkures piegādi ar citiem piegādātājiem.</p></div><div class=\"cl d1\"><span class=\"cn\">9.9.</span><p>Īpašnieks ir informēts par Kvartāla paredzēto turpmāku attīstīšanu. Īpašnieks atzīst Vastint Latvia SIA, reģistrācijas Nr. 40003647511, kā Kvartāla attīstītāju (turpmāk un iepriekš saukts - “Attīstītājs”) un Attīstītāja neierobežotas tiesības būvēt ēkas Kvartāla ietvaros. Īpašnieks apņemas necelt nekādas pretenzijas un prasības pret Attīstītāju saistībā ar ēku būvniecību Kvartālā, nelikt šķēršļus būvniecības un citiem darbiem (t.sk. būvdarbu veicēju un citu iesaistīto personu piekļūšanai Kvartālam), ja šāda būvniecība tiek veikta atbilstoši spēkā esošo būvniecību reglamentējošo tiesību aktu prasībām (t.sk. Būvniecības likumam un saistītiem Ministru kabineta noteikumiem), kā arī necelt pretenzijas, kas balstās uz gaismas vai skata tiesībām vai šo tiesību ierobežošanu.</p></div><div class=\"cl d1\"><span class=\"cn\">9.10.</span><p>Īpašnieks dod savu piekrišanu un nepieciešamos saskaņojumus jebkurai būvniecībai, kuru Attīstītājs nolēmis veikt Kvartālā, ciktāl tā atbilst Latvijas Republikas tiesību aktu prasībām.</p></div><div class=\"cl d1\"><span class=\"cn\">9.11.</span><p>Īpašnieks pilnvaro Attīstītāju saskaņot, saņemt atļaujas un veikt citas nepieciešamās darbības reklāmu, izkārtņu un informatīvu zīmju izvietošanai, nomaiņai un demontāžai uz Ēkas ārējām sienām, ja šādas reklāmas, izkārtnes un zīmes atbilst to izvietošanu reglamentējošo noteikumu prasībām (t.sk. Rīgas domes saistošajiem noteikumiem).</p></div></article><article class=\"ch\" id=\"n10\"><h3><span class=\"chn\">10</span><span class=\"cht\">Citi noteikumi</span></h3><div class=\"cl d1\"><span class=\"cn\">10.1.</span><p>Kodekss stājas spēkā ar brīdi, kad to ir parakstījis Attīstītājs un pirmais Īpašnieks. Jebkurš cits Īpašnieks kļūst par Kodeksa pusi un atzīst sev par saistošiem Kodeksa noteikumus (t.sk. tā iespējamos grozījumus nākotnē, ja tie ir pieņemti atbilstoši šai Kodeksa nodaļai un par kuriem attiecīgais Īpašnieks nav parakstījies), pievienojoties Kodeksam ar savu parakstu.</p></div><div class=\"cl d1\"><span class=\"cn\">10.2.</span><p>Kodekss ir spēkā uz neierobežotu laiku.</p></div><div class=\"cl d1\"><span class=\"cn\">10.3.</span><p>Kodeksu var grozīt rakstveidā tikai ar vismaz 2/3 (divu trešdaļu) Īpašnieku apstiprinājumu. Ja Kodeksa grozījumus rakstveidā apstiprina vismaz 2/3 (divas trešdaļas) Īpašnieku, tad minētie grozījumi kļūst par saistošiem visiem Īpašniekiem, tajā skaitā tiem, kas neapstiprināja grozījumus ar savu parakstu.</p></div><div class=\"cl d1\"><span class=\"cn\">10.4.</span><p>Jebkādus strīdus, domstarpības un jautājumus saistībā ar Kodeksu Īpašnieki risina pārrunu ceļā. Ja pārrunu ceļā vienošanos nav iespējams panākt 30 (trīsdesmit) dienu laikā no pārrunu uzsākšanas, visi strīdi saistībā ar Kodeksu ir risināmi Latvijas Republikas tiesā pēc piekritības.</p></div></article>";
+
+/* tabs */
+const tabs = [...document.querySelectorAll('[role=tab]')];
+function showTab(id){
+  tabs.forEach(t=>{
+    const sel = t.id === id;
+    t.setAttribute('aria-selected', sel);
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !sel;
+  });
+}
+tabs.forEach(t=>t.addEventListener('click',()=>showTab(t.id)));
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>showTab('t-full')));
+
+/* language */
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{
+  const l = b.dataset.set;
+  document.body.dataset.lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('.lang button').forEach(x=>x.setAttribute('aria-pressed', x.dataset.set===l));
+  document.getElementById('q').placeholder = l==='lv' ? 'Meklēt noteikumos…' : 'Search the rules…';
+  document.querySelectorAll('[data-lvtext]').forEach(e=>{ e.textContent = l==='lv' ? e.dataset.lvtext : e.dataset.entext; });
+}));
+
+/* search filters both tabs */
+const q = document.getElementById('q');
+q.addEventListener('input',()=>{
+  const t = q.value.trim().toLowerCase();
+  const on = t.length > 1;
+  document.querySelectorAll('.rule').forEach(r=>r.classList.toggle('hide', on && !r.textContent.toLowerCase().includes(t)));
+  document.querySelectorAll('.cl').forEach(c=>c.classList.toggle('hide', on && !c.textContent.toLowerCase().includes(t)));
+  document.querySelectorAll('.ch').forEach(ch=>{
+    ch.style.display = on && !ch.querySelector('.cl:not(.hide)') ? 'none' : '';
+  });
+});
+
+/* highlight the chapter currently in view */
+const links = [...document.querySelectorAll('.toc a')];
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) links.forEach(a=>a.classList.toggle('on', a.dataset.nav === e.target.id));
+  });
+},{rootMargin:'-15% 0px -70% 0px'});
+document.querySelectorAll('.ch').forEach(ch=>obs.observe(ch));
+</script>
+</body>
+</html>
