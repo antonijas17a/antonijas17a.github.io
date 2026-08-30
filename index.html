@@ -424,15 +424,28 @@ async function loadNews(){
       if(!res.ok){ tried.push(tag + ': HTTP ' + res.status); continue; }
       const text = await res.text();
       const rows = parseCSV(text).slice(1);              // drop the header row
-      const items = rows
-        .map(r => ({date:(r[0]||'').trim(), tLv:(r[1]||'').trim(), bLv:(r[2]||'').trim(),
-                    tEn:(r[3]||'').trim(), bEn:(r[4]||'').trim(), show:(r[5]||'').trim().toLowerCase(),
-                  img:(r[6]||'').trim()}))
-        .filter(n => n.tLv && !['nē','ne','no','0'].includes(n.show))
+      const items = [];
+      for(const r of rows){
+        const o = {date:(r[0]||'').trim(), tLv:(r[1]||'').trim(), bLv:(r[2]||'').trim(),
+                   tEn:(r[3]||'').trim(), bEn:(r[4]||'').trim(), show:(r[5]||'').trim().toLowerCase(),
+                   img:(r[6]||'').trim()};
+        // a row without a title continues the entry above it
+        if(!o.tLv){
+          const prev = items[items.length - 1];
+          if(!prev) continue;
+          if(o.bLv) prev.bLv += (prev.bLv ? '\n\n' : '') + o.bLv;
+          if(o.bEn) prev.bEn += (prev.bEn ? '\n\n' : '') + o.bEn;
+          if(o.img && !prev.img) prev.img = o.img;
+          continue;
+        }
+        items.push(o);
+      }
+      const visible = items
+        .filter(n => !['nē','ne','no','0'].includes(n.show))
         .sort((a,b) => (b.date || '').localeCompare(a.date || ''));
-      if(!items.length){ tried.push(tag + ': 0 ierakstu no ' + rows.length + ' rindām'); continue; }
-      console.log('Aktualitātes ielādētas no:', tag);
-      renderNews(items);
+      if(!visible.length){ tried.push(tag + ': 0 ierakstu no ' + rows.length + ' rindām'); continue; }
+      console.log('Aktualitātes ielādētas no:', tag, '·', visible.length, 'ieraksti');
+      renderNews(visible);
       return;
     }catch(err){ tried.push(tag + ': ' + err.message); }
   }
