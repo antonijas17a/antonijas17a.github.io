@@ -78,9 +78,11 @@ section>.wrap{padding-top:1.5rem;padding-bottom:1.75rem}
   .rcard{padding:1rem 1.05rem}
   .cards{grid-template-columns:1fr 1fr;gap:.5rem}
   .card{padding:.6rem .75rem;gap:0}
-  .card h3{font:500 .625rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+  .card h3{font:500 .625rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft);
+    display:inline}
   .role,.mail{display:none}
-  .role-short{display:block}
+  .role-short{display:inline;margin:0;font-size:.75rem}
+  .role-short::before{content:" · "}
   .contactline{margin-top:.3rem}
   .tel{font-size:1.15rem;margin-top:.3rem;min-height:auto}
   #contacts{padding:.5rem 0 .6rem}
@@ -212,9 +214,11 @@ body[data-lang="lv"] [data-l="en"],body[data-lang="en"] [data-l="lv"]{display:no
   .rcard{padding:1rem 1.05rem}
   .cards{grid-template-columns:1fr 1fr;gap:.5rem}
   .card{padding:.6rem .75rem;gap:0}
-  .card h3{font:500 .625rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+  .card h3{font:500 .625rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft);
+    display:inline}
   .role,.mail{display:none}
-  .role-short{display:block}
+  .role-short{display:inline;margin:0;font-size:.75rem}
+  .role-short::before{content:" · "}
   .contactline{margin-top:.3rem}
   .tel{font-size:1.15rem;margin-top:.3rem;min-height:auto}
   #contacts{padding:.5rem 0 .6rem}
