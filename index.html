@@ -73,23 +73,7 @@ section>.wrap{padding-top:1.5rem;padding-bottom:1.75rem}
 .hero h1 em{font-style:normal;font-weight:600;white-space:nowrap}
 .lede{margin:0 0 .35rem;color:var(--soft);font-size:.9375rem;line-height:1.55;
       text-align:right;white-space:nowrap}
-@media(max-width:760px){
-  .rgrid{grid-template-columns:1fr;gap:.75rem}
-  .rcard{padding:1rem 1.05rem}
-  .cards{grid-template-columns:1fr 1fr;gap:.5rem}
-  .card{padding:.6rem .75rem;gap:0}
-  .card h3{font:500 .625rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft);
-    display:inline}
-  .role,.mail{display:none}
-  .role-short{display:inline;margin:0;font-size:.75rem}
-  .role-short::before{content:" · "}
-  .contactline{margin-top:.3rem}
-  .tel{font-size:1.15rem;margin-top:.3rem;min-height:auto}
-  #contacts{padding:.5rem 0 .6rem}
-  .hero{padding-top:1.1rem;padding-bottom:.9rem}
-  .hero h1{font-size:1.3rem;max-width:none}
-  .lede{font-size:.8125rem}.hero{grid-template-columns:1fr;align-items:start}
-  .lede{text-align:left;white-space:normal;margin-top:.35rem}}
+
 
 /* ---------- tabs ---------- */
 .tabbar{position:sticky;top:3.5rem;z-index:20;background:var(--bg);padding:1rem 0 .25rem}
@@ -210,39 +194,32 @@ body[data-lang="lv"] [data-l="en"],body[data-lang="en"] [data-l="lv"]{display:no
   .toc a .nn{display:none}
 }
 @media(max-width:760px){
-  .rgrid{grid-template-columns:1fr;gap:.75rem}
-  .rcard{padding:1rem 1.05rem}
-  .cards{grid-template-columns:1fr 1fr;gap:.5rem}
-  .card{padding:.6rem .75rem;gap:0}
-  .card h3{font:500 .625rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft);
-    display:inline}
-  .role,.mail{display:none}
-  .role-short{display:inline;margin:0;font-size:.75rem}
-  .role-short::before{content:" · "}
-  .contactline{margin-top:.3rem}
-  .tel{font-size:1.15rem;margin-top:.3rem;min-height:auto}
-  #contacts{padding:.5rem 0 .6rem}
-  .hero{padding-top:1.1rem;padding-bottom:.9rem}
-  .hero h1{font-size:1.3rem;max-width:none}
-  .lede{font-size:.8125rem}
   html{scroll-padding-top:1rem}
   .bar .wrap{min-height:3.25rem;gap:.6rem}
   .wm{font-size:1rem}
   #q{width:100%;order:4;font-size:16px;padding:.6rem .9rem}   /* 16px stops iOS zooming on focus */
   #theme{order:2}
   .lang{order:3}
-  .hero{margin-top:.75rem;padding-top:1.35rem;padding-bottom:1.35rem}
-  .hero h1{font-size:1.4rem}
-  .lede{font-size:.9375rem}
+  .hero{grid-template-columns:1fr;align-items:start;margin-top:.5rem;padding-top:1.1rem;padding-bottom:.9rem}
+  .hero h1{font-size:1.35rem;max-width:none}
+  .lede{font-size:.875rem;text-align:left;white-space:normal;margin-top:.35rem}
   .tabbar{position:static;padding:.85rem 0 .25rem}
   .tabbar>.wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .tabbar>.wrap::-webkit-scrollbar{display:none}
   .tabbar button{flex:none;padding:.6rem .9rem;min-height:2.75rem}
-  .cards{grid-template-columns:1fr}
-  .card{padding:1rem 1.1rem}
-  .tel{font-size:1.5rem;min-height:2.75rem;display:flex;align-items:center}
-  .rule,.cl{grid-template-columns:1fr;gap:.25rem}
-  .rule{padding:.65rem .75rem;margin-left:-.75rem}
+  .rgrid{grid-template-columns:1fr;gap:.75rem}
+  .rcard{padding:1rem 1.05rem}
+  #contacts{padding:.5rem 0 .6rem}
+  .cards{grid-template-columns:1fr;gap:.5rem}
+  .card{display:block;padding:.7rem .9rem}
+  .card h3{display:inline;font:500 .6875rem/1.4 var(--mono);letter-spacing:.12em;
+    text-transform:uppercase;color:var(--soft)}
+  .role,.mail{display:none}
+  .role-short{display:inline;margin:0;font-size:.8125rem;color:var(--soft)}
+  .role-short::before{content:" · "}
+  .contactline{margin-top:.2rem}
+  .tel{display:inline-block;font-size:1.5rem;margin-top:.15rem;min-height:auto}
+  .cl{grid-template-columns:1fr;gap:.25rem}
   .cl.d2{padding-left:.9rem;border-left:1px solid var(--line)}
   .ch h3{flex-wrap:wrap;gap:.5rem}
   .cht{flex:1 1 100%;font-size:1.0625rem}
