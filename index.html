@@ -156,7 +156,14 @@ section>.wrap{padding-top:1.5rem;padding-bottom:1.75rem}
 .post:last-child{border-bottom:0;padding-bottom:0}
 .post time{display:block;font:500 .6875rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}
 .post h3{font-size:1.125rem;font-weight:500;margin-bottom:.4rem}
-.post p{margin:0;color:var(--soft);font-size:.9375rem;white-space:pre-line}
+.postbody{color:var(--soft);font-size:.9375rem}
+.postbody p{margin:0 0 .6rem}
+.postbody p:last-child{margin-bottom:0}
+.postbody ul{margin:0 0 .7rem;padding:0;list-style:none}
+.postbody ul:last-child{margin-bottom:0}
+.postbody li{position:relative;padding:.12rem 0 .12rem 1rem}
+.postbody li::before{content:"";position:absolute;left:0;top:.75em;width:.3rem;height:.3rem;
+  border-radius:50%;background:var(--green)}
 .postimg{display:block;margin:.85rem 0 0;max-width:min(100%,32rem);height:auto;
   border-radius:10px;border:1px solid var(--line)}
 .empty{color:var(--soft);font-size:.9375rem;margin:0;padding:.4rem 0 .25rem}
@@ -350,7 +357,7 @@ body[data-lang="lv"] [data-l="en"],body[data-lang="en"] [data-l="lv"]{display:no
   </div>
 </main>
 
-<footer data-build="2026-08-28-c"><div class="wrap">
+<footer data-build="2026-08-30-merge"><div class="wrap">
   <p data-l="lv">Neoficiāla iedzīvotāju lapa. Juridiski saistošs ir parakstītais Kodeksa eksemplārs pie pārvaldnieka. Lapa nav saistīta ar kvartāla attīstītāju.</p>
   <p data-l="en">Unofficial residents' page. Only the signed copy of the Code is legally binding. Not affiliated with the developer of the quarter.</p>
 </div></footer>
@@ -387,6 +394,23 @@ function parseCSV(text){
   return rows.filter(r=>r.some(v=>v.trim()));
 }
 
+const escHtml = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+/* blank line = new paragraph; lines starting with -, * or • become a list */
+function rich(txt){
+  let out = '', list = [], para = [];
+  const flushList = () => { if(list.length){ out += '<ul>' + list.map(l => `<li>${escHtml(l)}</li>`).join('') + '</ul>'; list = []; } };
+  const flushPara = () => { if(para.length){ out += `<p>${escHtml(para.join(' '))}</p>`; para = []; } };
+  for(const raw of (txt || '').split('\n')){
+    const l = raw.trim();
+    if(/^[-*•]\s+/.test(l)){ flushPara(); list.push(l.replace(/^[-*•]\s+/, '')); }
+    else if(!l){ flushList(); flushPara(); }
+    else { flushList(); para.push(l); }
+  }
+  flushList(); flushPara();
+  return out;
+}
+
 function renderNews(items){
   if(!items.length){ newsBox.innerHTML = say('Šobrīd aktualitāšu nav.','No updates at the moment.'); return; }
   newsBox.innerHTML = items.map(n=>{
@@ -397,7 +421,8 @@ function renderNews(items){
     return `<article class="post">
       <time datetime="${valid ? d.toISOString().slice(0,10) : ''}"><span data-l="lv">${lvD}</span><span data-l="en">${enD}</span></time>
       <h3><span data-l="lv">${n.tLv}</span><span data-l="en">${n.tEn || n.tLv}</span></h3>
-      <p><span data-l="lv">${n.bLv}</span><span data-l="en">${n.bEn || n.bLv}</span></p>
+      <div class="postbody" data-l="lv">${rich(n.bLv)}</div>
+      <div class="postbody" data-l="en">${rich(n.bEn || n.bLv)}</div>
       ${n.img ? `<img class="postimg" src="${n.img}" alt="" loading="lazy">` : ''}
     </article>`;
   }).join('');
@@ -444,7 +469,7 @@ async function loadNews(){
         .filter(n => !['nē','ne','no','0'].includes(n.show))
         .sort((a,b) => (b.date || '').localeCompare(a.date || ''));
       if(!visible.length){ tried.push(tag + ': 0 ierakstu no ' + rows.length + ' rindām'); continue; }
-      console.log('Aktualitātes ielādētas no:', tag, '·', visible.length, 'ieraksti');
+      console.log('Antonijas 17A · versija 2026-08-30-merge · aktualitātes no:', tag, '·', visible.length, 'ieraksti');
       renderNews(visible);
       return;
     }catch(err){ tried.push(tag + ': ' + err.message); }
